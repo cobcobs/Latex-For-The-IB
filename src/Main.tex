@@ -16,14 +16,18 @@
 % along with Latex-For-The-IB. If not, see http://www.gnu.org/licenses/.
 
 \documentclass[12pt,a4paper]{article}
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
 
 % Packages
 \usepackage{packages}
 
 % Document Settings
 \geometry{margin=1in}
-\setlength{\parskip}{1ex}
+\setlength{\parskip}{0.5cm}
 \setlength{\parindent}{0pt}
+\doublespacing
 
 % =========================================
 %             DOCUMENT
@@ -35,25 +39,23 @@
 %      TITLE PAGE
 % =========================
 
-% Supresses headers, footers, and pagenumbers on titlepage.
+\title{%
+  \small{} \\
+  \vspace{3.5\baselineskip} % Whitespace
+  \Huge{} \\
+  \vspace{1.5\baselineskip} % Whitespace
+  \small{\textbf{}}
+}
+
+\date{}
+\author{}
+
+\renewcommand\maketitlehooka{\null\mbox{}\vfill}
+\renewcommand\maketitlehookd{\vfill\null}
+
 \begin{titlepage}
-\centering % Centers page
-\scshape % Small-caps text
-\vfill
-
-\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
-\rule{\textwidth}{0.4pt}
-
-\vspace{1.5\baselineskip} % Whitespace
-\LARGE{\LaTeX{} for the IB}\\
-\vspace{0.2\baselineskip}
-\small{\textit{Get a 7 with style.}}
-\vspace{0.75\baselineskip} % Whitespace
-
-\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
-\rule{\textwidth}{1.6pt}
-
-\vfill
+\clearpage\maketitle
+\thispagestyle{empty}
 \end{titlepage}
 
 % =========================
@@ -65,33 +67,24 @@
 \begin{center}
 \pdfbookmark{\contentsname}{Contents}
 \tableofcontents
-\vspace{1in}
-
-\Large{\textbf{Notes}}
 \end{center}
-
-The \LaTeX code used to create this PDF can be found here: \url{https://github.com/vardy/Latex-For-The-IB/tree/master/src.}
-
-% TODO: Add hyper-references to links
-% TODO: Improve listings' styling
-% TODO: Add links to Contents entries
 
 \newpage
 
 \pagenumbering{arabic}
 
-\include{sections/Introduction}
+% \include{sections/Introduction}
 
-\newpage
-\include{sections/Setting_up_and_Structuring}
+% \newpage
+% \include{sections/Setting_up_and_Structuring}
 
-\newpage
-\include{sections/Writing_your_documents}
+% \newpage
+% \include{sections/Writing_your_documents}
 
-\newpage
-\include{sections/Miscellaneous}
+% \newpage
+% \include{sections/Miscellaneous}
 
-\newpage
-\include{sections/Contributors}
+% \newpage
+% \include{sections/Contributors}
 
 \end{document}
